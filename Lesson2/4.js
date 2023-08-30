@@ -28,5 +28,5 @@ const number = numberInput % 1000;
 const hundreds = Math.trunc(number / 100);
 const tens = Math.trunc((number % 100) / 10);
 const ones = number - (100 * hundreds - tens * 10);
-console.log(`В числе ${numberInput} количество сотен: ${hundreds},
+alert(`В числе ${numberInput} количество сотен: ${hundreds},
 десятков: ${tens}, единиц: ${ones}`);
