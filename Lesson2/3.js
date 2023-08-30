@@ -15,9 +15,11 @@
 */
 
 const dayNumber = +prompt("Введите целое число в интервале [1, 32]");
-if (dayNumber > 0 && dayNumber < 32) {
-  let dec = Math.ceil(dayNumber / 10);
+if (dayNumber > 0 && dayNumber < 30) {
+  const dec = Math.ceil(dayNumber / 10);
   alert(`Число ${dayNumber} попадает в ${dec} декаду месяца.`);
+} else if(dayNumber === 30 || dayNumber === 31){
+  alert(`Число ${dayNumber} попадает в 3 декаду месяца.`);  
 } else {
   alert("Неверное значение");
 }
