@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card-box {
+        width: 1200px;
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+      }
+      .card {
+        width: 200px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .image {
+        width: 100px;
+        height: 150px;
+        margin: 10px;
+      }
+      .card p {
+        margin: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./data.js"></script>
+    <script>
+      const cardBox = document.createElement("div");
+      cardBox.classList.add("card-box");
+      document.body.append(cardBox);
+
+      dataObj.cards.forEach((cardItem) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        const img = document.createElement("img");
+        img.classList.add("image");
+        img.src = `./img/${cardItem.image}`;
+        img.alt = cardItem.code;
+        card.append(img);
+        const suit = document.createElement("p");
+        suit.textContent = `Масть: ${cardItem.suit}`;
+        card.append(suit);
+        const value = document.createElement("p");
+        value.textContent = `Значение: ${cardItem.value}`;
+        card.append(value);
+        cardBox.append(card);
+      });
+    </script>
+  </body>
+</html>
